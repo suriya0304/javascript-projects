@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.wrapper{
+    position: relative;
+    width: 400px;
+    background: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animate 1.5s linear infinite;
+}
+.wrapper .current-time{
+    width: 95%;
+    margin: 10px ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #1b1b1b;
+   
+    
+    
+}
+
+select{
+    -webkit-appearance: none;
+}
+
+/*to give gradient color and animate*/
+i, #time,select ,button{
+    background: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate{
+    100%{
+        filter:hue-rotate(360deg);
+    }
+}
+
+
+.clock{
+    padding: 20px 0;
+}
+#time{
+    padding: 20px 0;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.set-alarm{
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.column{
+    display: flex;
+    border: 1px solid azure;
+    width: calc(100% / 3 - 5px);
+    cursor: pointer;
+    align-items: center;
+    padding: 0 15px ;
+}
+.column select{
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+}
+.column i{
+    font-size: 20px;
+}
+.alarm-btn{
+    border: 1px solid azure;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+.disable{
+    opacity: 0.5;
+    pointer-events: none;  
+}

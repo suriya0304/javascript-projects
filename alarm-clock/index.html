@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/10911d4028.js" crossorigin="anonymous"></script>
+    <title>Digital clock</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="current-time">
+
+           <!-- bell logo-->
+            <div class="clock">
+                <i style="font-size: 50px;" class="fa-solid fa-bell"></i>
+            </div>
+
+            <!-- current time -->
+            <div id="time">12:00:00 PM</div>
+
+            <!-- to set alarm  -->
+            <div class="set-alarm">
+                <div class="column">
+                    <select>
+                        <option value="hour" selected hidden>Hour </option>
+                    </select>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="column">
+                    <select >
+                        <option value="minute" selected hidden>Minute</option>
+                    </select>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="column">
+                    <select >
+                        <option value="AM/PM" selected hidden>AM/PM</option>
+                    </select>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </div>
+
+            <!-- alarm button-->
+            <button class="alarm-btn">Set alarm</button>
+        </div>
+
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
