@@ -2,17 +2,12 @@
 const todoInput=document.querySelector('.todo-input')
 const todoAddBtn=document.querySelector('.todo-add-btn')
 const todoList=document.querySelector('.todo-list')
-const search = document.querySelector('.select')
+const filterOption = document.querySelector('.select')
 
 //event listeners
 todoAddBtn.addEventListener('click',addTodo)
 todoList.addEventListener('click',deleteOrCheckTask)
-search.addEventListener('click',()=>{
-    console.log('click')
-    const arrow=document.querySelector('.fa-angle-down');
-    arrow.classList.toggle('turn');
-    
-})
+filterOption.addEventListener('click',filterToDo)
 
 
 //functions
@@ -66,4 +61,30 @@ function deleteOrCheckTask(e){
     if(item.classList[0]==='completed-btn'){
         todo.classList.toggle('checked')
     }
+}
+
+
+function filterToDo(e){
+    const todos=todoList.childNodes
+    todos.forEach(function(todo){
+        switch(e.target.value){
+            case 'all':
+                todo.style.display='flex';
+                break;
+            case 'completed':
+                if(!todo.classList.contains('checked')){
+                    todo.style.display='none'
+                }else{
+                    todo.style.display='flex';
+                }
+                break;
+            case 'uncompleted':
+                if(todo.classList.contains('checked')){
+                    todo.style.display='none'
+                }else{
+                    todo.style.display='flex';
+                }
+                break;
+        }
+    })
 }
