@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient( 95.2deg, rgb(173, 252, 234) 26.8%, rgba(192,229,246,1) 64% );
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    color: #364F6B;
+}
+header,form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+}
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.search{
+    position: relative;
+}
+.input-container option{
+    margin: 10px;
+}
+.select{
+    -webkit-appearance: none;
+    border: none;
+    background-color: aliceblue;
+    font-size: 20px;
+    width: 200px;
+    padding-left:10px ;
+}
+select{
+    outline: none;
+    border: none;
+}
+.search i{
+    color: #393E46;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+header{
+    font-size: 2rem;
+}
+form button, form input{
+    font-size: 2rem;
+    padding: 0.5rem;
+    background: aliceblue;
+    border: none;
+}
+
+form button{
+    background-color: #393E46;
+    color: #6cf8ff;
+}
+
+form button:hover{
+    color:#364F6B;
+    background-color: #0fb2bb;
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list{
+    min-width: 30%;
+    list-style: none;
+}
+.todo{
+    padding: 10px;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    background-color:aliceblue;
+    color:#364F6B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+.todo li{
+    flex: 1;
+}
+.todo-item{
+    padding-right: 10px;
+}
+
+.trash-btn ,.completed-btn{
+    border: none;
+    padding: 1rem;
+    
+    cursor: pointer;
+    font-size: 1rem;
+}
+.completed-btn{
+    background-color: #393E46;
+    color: #6beb9a;
+}
+.trash-btn{
+    background-color: #393E46;
+    color: #ff8040;
+}
+.fa-trash,.fa-square-check,.fa-angle-down{
+    pointer-events: none;
+}
+.checked{
+    text-decoration:line-through;
+    opacity: 0.7;
+}
+.fall{
+    transform: translateY(8rem);
+    opacity: 0;
+}
+.turn{
+    transform: rotateZ(180deg);
+}

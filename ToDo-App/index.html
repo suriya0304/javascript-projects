@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/10911d4028.js" crossorigin="anonymous"></script>
+    <title>ToDo List</title>
+</head>
+<body>
+    <header>
+        <h1>My ToDo List</h1>
+    </header>
+    <div class="input-container">
+        <form>
+            <input type="text" class="todo-input" placeholder="What's your next task?">
+            <button class="todo-add-btn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </form>
+        <div class="search">
+            <select name="" id="" class="select">
+                <option class="'option" value="all" selected>All</option>
+                <option class="'option" value="uncompleted">Uncomplete</option>
+                <option class="'option" value="completed">Completd</option>
+                
+            </select>
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+    </div>
+    <div class="todo-container">
+        <ul class="todo-list"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
