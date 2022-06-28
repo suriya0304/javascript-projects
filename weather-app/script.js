@@ -2,6 +2,7 @@
 const wrapper=document.querySelector('.wrapper'),
 infoText=document.querySelector('.pending'),
 inputPart=document.querySelector('.input-part'),
+weatherPart=document.querySelector('.weather-part')
 input=document.querySelector('input'),
 locationBtn=document.querySelector('.device-location'),
 liveTemp=document.querySelector('.live-temperature'),
@@ -9,6 +10,8 @@ liveWeather=document.querySelector('.live-weather'),
 searchedLocation=document.querySelector('.location'),
 humidityDetails=document.querySelector('.humidity-details'),
 feelsLike=document.querySelector('.feels-like-details')
+home=document.querySelector('.home'),
+weatherIcon=document.querySelector('.weather-icon')
 
 
 //eventListener
@@ -28,6 +31,11 @@ locationBtn.addEventListener('click',()=>{
     }else{
         alert("your browser doesn\'t support geolocation" );
     }
+})
+
+home.addEventListener('click',()=>{
+    toggleHome()
+    mainToggle()
 })
 
 //function
@@ -54,7 +62,8 @@ function onSuccess(result){
 
 function weatherDetails(data){
     console.log(data)
-    const {description}=data.weather
+    const {country}=data.sys
+    const {description}=data.weather[0]
     const {feels_like,humidity,temp}=data.main
     liveWeather.innerText=description
     liveTemp.innerHTML=`${Math.round(toCelcius(temp))}&#8451;`
@@ -62,7 +71,29 @@ function weatherDetails(data){
     humidityDetails.innerText=humidity+'%'
     infoText.classList.add('inactive')
     infoText.classList.remove('active')
+    searchedLocation.innerText=data.name +", "+ country
+    
 
+    //change weather icon
+    var iconcode = data.weather[0].icon;
+    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+    weatherIcon.src=iconurl
+
+
+
+    //show main content 
+    toggleHome()
+    mainToggle()
+
+}
+
+function mainToggle(){
+    inputPart.classList.toggle('inactive')
+    weatherPart.classList.toggle('inactive')
+}
+
+function toggleHome(){
+    home.classList.toggle('fa-arrow-left')
 }
 
 function toCelcius(kelvins){
